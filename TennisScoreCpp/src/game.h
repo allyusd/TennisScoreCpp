@@ -18,8 +18,11 @@ public:
 	void set_first_player_name(const std::string& name);
 	std::string second_player_name() const;
 	void set_second_player_name(const std::string& name);
-	std::string adv_player() const;
 
+	std::string result() const;
+
+private:
+	std::string adv_player() const;
 	std::string score_lookup(int score) const;
 	bool is_game_score() const;
 	std::string same_score_lookup() const;
@@ -28,7 +31,6 @@ public:
 	bool is_ready_for_win() const;
 	bool is_adv() const;
 	std::string adv_state() const;
-	std::string result() const;
 
 private:
 	int m_id = 0;

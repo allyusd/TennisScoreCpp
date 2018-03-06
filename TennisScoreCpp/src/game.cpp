@@ -62,6 +62,13 @@ void Game::set_second_player_name(const std::string& name)
 	m_second_player_name = name;
 }
 
+std::string Game::result() const
+{
+	return is_game_score()
+		? is_deuce() ? "Deuce" : same_score_lookup()
+		: is_ready_for_win() ? adv_state() : lookup_score();
+}
+
 std::string Game::score_lookup(const int score) const
 {
 	return static_cast<std::string>(m_score_lookup.at(score));
@@ -105,11 +112,4 @@ bool Game::is_adv() const
 std::string Game::adv_state() const
 {
 	return adv_player().append(" ").append(std::string(is_adv() ? "Adv" : "Win"));
-}
-
-std::string Game::result() const
-{
-	return is_game_score()
-		? is_deuce() ? "Deuce" : same_score_lookup()
-		: is_ready_for_win() ? adv_state() : lookup_score();
 }
