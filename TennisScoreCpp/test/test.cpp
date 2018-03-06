@@ -69,3 +69,14 @@ TEST_F(TennisGameTest, Deuce)
 	given_game(game);
 	score_should_be("Deuce");
 }
+
+TEST_F(TennisGameTest, FifteenLove)
+{
+	Game game;
+	game.set_id(any_game_id);
+	game.set_first_player_score(1);
+	game.set_second_player_score(0);
+
+	given_game(game);
+	score_should_be("Fifteen Love");
+}
