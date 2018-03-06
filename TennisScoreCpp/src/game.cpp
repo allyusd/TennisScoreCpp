@@ -5,6 +5,7 @@ Game::Game()
 	m_score_lookup.insert(std::pair<int, std::string>(0, "Love"));
 	m_score_lookup.insert(std::pair<int, std::string>(1, "Fifteen"));
 	m_score_lookup.insert(std::pair<int, std::string>(2, "Thirty"));
+	m_score_lookup.insert(std::pair<int, std::string>(3, "Forty"));
 }
 
 Game::~Game()
