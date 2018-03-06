@@ -114,3 +114,15 @@ TEST_F(TennisGameTest, FirstPlayer_Advance)
 	given_game(game);
 	score_should_be("Joey Adv");
 }
+
+TEST_F(TennisGameTest, SecondPlayer_Advance)
+{
+	Game game;
+	game.set_id(any_game_id);
+	game.set_first_player_score(3);
+	game.set_second_player_score(4);
+	game.set_second_player_name("Tom");
+
+	given_game(game);
+	score_should_be("Tom Adv");
+}
