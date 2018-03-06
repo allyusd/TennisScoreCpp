@@ -4,7 +4,13 @@
 
 #include <gtest/gtest.h>
 
-TEST(TennisGame, All_Love) {
+class TennisGameTest : public testing::Test {
+protected:
+	void SetUp() override {}
+	void TearDown() override {}
+};
+
+TEST_F(TennisGameTest, AllLove) {
 	Game game;
 	game.set_id(1);
 	game.set_first_player_score(0);
