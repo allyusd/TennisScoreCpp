@@ -86,3 +86,8 @@ std::string Game::lookup_score() const
 {
 	return score_lookup(first_player_score()).append(" ").append(score_lookup(second_player_score()));
 }
+
+bool Game::is_ready_for_win() const
+{
+	return first_player_score() > 3 || second_player_score() > 3;
+}

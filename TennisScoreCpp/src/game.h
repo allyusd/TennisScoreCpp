@@ -24,6 +24,7 @@ public:
 	std::string same_score_lookup() const;
 	bool is_deuce() const;
 	std::string lookup_score() const;
+	bool is_ready_for_win() const;
 
 private:
 	int m_id = 0;
