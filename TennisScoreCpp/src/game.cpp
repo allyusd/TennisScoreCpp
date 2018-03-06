@@ -91,3 +91,8 @@ bool Game::is_ready_for_win() const
 {
 	return first_player_score() > 3 || second_player_score() > 3;
 }
+
+std::string Game::adv_player() const
+{
+	return first_player_score() > second_player_score() ? first_player_name() : second_player_name();
+}

@@ -18,6 +18,7 @@ public:
 	void set_first_player_name(const std::string& name);
 	std::string second_player_name() const;
 	void set_second_player_name(const std::string& name);
+	std::string adv_player() const;
 
 	std::string score_lookup(int score) const;
 	bool is_game_score() const;
