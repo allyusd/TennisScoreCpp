@@ -42,6 +42,26 @@ void Game::set_second_player_score(int score)
 	m_second_player_score = score;
 }
 
+std::string Game::first_player_name() const
+{
+	return m_first_player_name;
+}
+
+void Game::set_first_player_name(const std::string& name)
+{
+	m_first_player_name = name;
+}
+
+std::string Game::second_player_name() const
+{
+	return m_second_player_name;
+}
+
+void Game::set_second_player_name(const std::string& name)
+{
+	m_second_player_name = name;
+}
+
 std::string Game::score_lookup(const int score) const
 {
 	return static_cast<std::string>(m_score_lookup.at(score));
