@@ -4,25 +4,16 @@
 TennisGame::TennisGame(IRepository* repo)
 {
 	m_repo = repo;
-
-	m_score_lookup.insert(std::pair<int, std::string>(0, "Love"));
-	m_score_lookup.insert(std::pair<int, std::string>(1, "Fifteen"));
-	m_score_lookup.insert(std::pair<int, std::string>(2, "Thirty"));
-}
-
-std::string TennisGame::score_lookup(const int score) const
-{
-	return static_cast<std::string>(m_score_lookup.at(score));
 }
 
 std::string TennisGame::score_result(const int game_id) const
 {
 	auto game = m_repo->get_game(game_id);
 
-	if (game.first_player_score() >= 3)
+	if (game.is_game_score())
 	{
-		return "Deuce";
+		return game.is_deuce() ? "Deuce" : game.same_score_lookup();
 	}
 
-	return score_lookup(game.first_player_score()).append(" All");
+	return game.lookup_score();
 }
