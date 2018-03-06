@@ -5,9 +5,9 @@ TennisGame::TennisGame(IRepository* repo)
 {
 	m_repo = repo;
 
-	m_score_loopup.insert(std::pair<int, std::string>(0, "Love"));
-	m_score_loopup.insert(std::pair<int, std::string>(1, "Fifteen"));
-	m_score_loopup.insert(std::pair<int, std::string>(2, "Thirty"));
+	m_score_lookup.insert(std::pair<int, std::string>(0, "Love"));
+	m_score_lookup.insert(std::pair<int, std::string>(1, "Fifteen"));
+	m_score_lookup.insert(std::pair<int, std::string>(2, "Thirty"));
 }
 
 std::string TennisGame::score_result(const int game_id) const
@@ -19,5 +19,5 @@ std::string TennisGame::score_result(const int game_id) const
 		return "Deuce";
 	}
 
-	return static_cast<std::string>(m_score_loopup.at(game.first_player_score())).append(" All");
+	return static_cast<std::string>(m_score_lookup.at(game.first_player_score())).append(" All");
 }

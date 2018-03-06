@@ -13,5 +13,5 @@ public:
 
 private:
 	IRepository* m_repo;
-	std::map<int, std::string> m_score_loopup;
+	std::map<int, std::string> m_score_lookup;
 };
