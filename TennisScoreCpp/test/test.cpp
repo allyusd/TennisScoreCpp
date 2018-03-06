@@ -26,7 +26,7 @@ protected:
 	MockRepository m_repo;
 };
 
-TEST_F(TennisGameTest, AllLove)
+TEST_F(TennisGameTest, LoveAll)
 {
 	Game game;
 	game.set_id(any_game_id);
@@ -34,5 +34,5 @@ TEST_F(TennisGameTest, AllLove)
 	game.set_second_player_score(0);
 
 	given_game(game);
-	score_should_be("All Love");
+	score_should_be("Love All");
 }
