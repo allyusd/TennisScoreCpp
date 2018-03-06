@@ -36,3 +36,14 @@ TEST_F(TennisGameTest, LoveAll)
 	given_game(game);
 	score_should_be("Love All");
 }
+
+TEST_F(TennisGameTest, FifteenAll)
+{
+	Game game;
+	game.set_id(any_game_id);
+	game.set_first_player_score(1);
+	game.set_second_player_score(1);
+
+	given_game(game);
+	score_should_be("Fifteen All");
+}
