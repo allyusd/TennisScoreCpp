@@ -15,6 +15,11 @@ std::string TennisGame::score_result(const int game_id) const
 	{
 		return "Fifteen All";
 	}
+	else if(game.first_player_score() == 2
+		&& game.second_player_score() == 2)
+	{
+		return "Thirty All";
+	}
 
 	return "Love All";
 }
