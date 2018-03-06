@@ -96,3 +96,20 @@ std::string Game::adv_player() const
 {
 	return first_player_score() > second_player_score() ? first_player_name() : second_player_name();
 }
+
+bool Game::is_adv() const
+{
+	return std::abs(first_player_score() - second_player_score()) == 1;
+}
+
+std::string Game::adv_state() const
+{
+	return adv_player().append(" ").append(std::string(is_adv() ? "Adv" : "Win"));
+}
+
+std::string Game::result() const
+{
+	return is_game_score()
+		? is_deuce() ? "Deuce" : same_score_lookup()
+		: is_ready_for_win() ? adv_state() : lookup_score();
+}

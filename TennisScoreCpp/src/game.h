@@ -26,6 +26,9 @@ public:
 	bool is_deuce() const;
 	std::string lookup_score() const;
 	bool is_ready_for_win() const;
+	bool is_adv() const;
+	std::string adv_state() const;
+	std::string result() const;
 
 private:
 	int m_id = 0;
