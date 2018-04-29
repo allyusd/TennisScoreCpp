@@ -25,7 +25,9 @@ std::string TennisGame::score_result(const int game_id) const
     }
     else
     {
-        return "Fifteen Love";
+        return score_lookup(game.first_player_score())
+            .append(" ")
+            .append(score_lookup(game.second_player_score()));
     }
 }
 
