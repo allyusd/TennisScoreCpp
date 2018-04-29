@@ -9,22 +9,33 @@ class TennisGameTest : public testing::Test
 protected:
     void SetUp() override {}
     void TearDown() override {}
+
+    void given_game(const Game& game);
+    void score_should_be(const std::string& expect);
+
+    const int kAnyGameID = 1;
+    MockRepository repo;
 };
+
+void TennisGameTest::given_game(const Game& game)
+{
+    repo.set_game(game);
+}
+
+void TennisGameTest::score_should_be(const std::string& expect)
+{
+    TennisGame tennisGame(&repo);
+    auto result = tennisGame.score_result(kAnyGameID);
+    EXPECT_EQ(expect, result);
+}
 
 TEST_F(TennisGameTest, LoveAll)
 {
     Game game;
-    game.set_id(1);
+    game.set_id(kAnyGameID);
     game.set_first_player_score(0);
     game.set_second_player_score(0);
 
-    MockRepository repo;
-    repo.set_game(game);
-
-    TennisGame tennisGame(&repo);
-
-    int game_id = 1;
-    auto result = tennisGame.score_result(game_id);
-
-    EXPECT_EQ("Love All", result);
+    given_game(game);
+    score_should_be("Love All");
 }
