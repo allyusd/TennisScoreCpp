@@ -50,3 +50,14 @@ TEST_F(TennisGameTest, FifteenAll)
     given_game(game);
     score_should_be("Fifteen All");
 }
+
+TEST_F(TennisGameTest, ThirtyAll)
+{
+    Game game;
+    game.set_id(kAnyGameID);
+    game.set_first_player_score(2);
+    game.set_second_player_score(2);
+
+    given_game(game);
+    score_should_be("Thirty All");
+}
