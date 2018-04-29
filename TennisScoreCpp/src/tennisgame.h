@@ -12,7 +12,7 @@ public:
     std::string score_result(const int game_id) const;
 
 private:
-    std::string& score_lookup(const int score) const;
+    std::string score_lookup(const int score) const;
 
 private:
     IRepository* m_repo;

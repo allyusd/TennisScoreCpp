@@ -17,7 +17,7 @@ std::string TennisGame::score_result(const int game_id) const
     return score_lookup(game.first_player_score()).append(" All");
 }
 
-std::string& TennisGame::score_lookup(const int score) const
+std::string TennisGame::score_lookup(const int score) const
 {
     return static_cast<std::string>(m_score_lookup_map.at(score));
 }
