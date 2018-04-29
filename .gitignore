@@ -351,3 +351,4 @@ ASALocalRun/
 *.exe
 *.out
 *.app
+Pre-Build_Event_User.bat

@@ -7,9 +7,9 @@
 class TennisGame
 {
 public:
-	TennisGame(IRepository* repo);
-	std::string score_result(const int game_id) const;
+    TennisGame(IRepository* repo);
+    std::string score_result(const int game_id) const;
 
 private:
-	IRepository* m_repo;
+    IRepository* m_repo;
 };
