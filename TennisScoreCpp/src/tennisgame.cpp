@@ -14,12 +14,19 @@ std::string TennisGame::score_result(const int game_id) const
 {
     auto game = m_repo->get_game(game_id);
 
-    if (game.first_player_score() >= 3)
+    if (game.first_player_score() == game.second_player_score())
     {
-        return "Deuce";
-    }
+        if (game.first_player_score() >= 3)
+        {
+            return "Deuce";
+        }
 
-    return score_lookup(game.first_player_score()).append(" All");
+        return score_lookup(game.first_player_score()).append(" All");
+    }
+    else
+    {
+        return "Fifteen Love";
+    }
 }
 
 std::string TennisGame::score_lookup(const int score) const
