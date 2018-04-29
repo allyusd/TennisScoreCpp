@@ -3,6 +3,7 @@
 #include "irepository.h"
 
 #include <string>
+#include <map>
 
 class TennisGame
 {
@@ -12,4 +13,5 @@ public:
 
 private:
     IRepository* m_repo;
+    std::map<int, std::string> m_score_lookup_map;
 };
