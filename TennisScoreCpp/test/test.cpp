@@ -11,7 +11,7 @@ protected:
     void TearDown() override {}
 };
 
-TEST_F(TennisGameTest, AllLove)
+TEST_F(TennisGameTest, LoveAll)
 {
     Game game;
     game.set_id(1);
@@ -26,5 +26,5 @@ TEST_F(TennisGameTest, AllLove)
     int game_id = 1;
     auto result = tennisGame.score_result(game_id);
 
-    EXPECT_EQ("All Love", result);
+    EXPECT_EQ("Love All", result);
 }
