@@ -14,7 +14,7 @@ std::string TennisGame::score_result(const int game_id) const
 {
     auto game = m_repo->get_game(game_id);
 
-    if (game.first_player_score() == game.second_player_score())
+    if (is_same_score(game))
     {
         if (game.first_player_score() >= 3)
         {
@@ -29,6 +29,11 @@ std::string TennisGame::score_result(const int game_id) const
             .append(" ")
             .append(score_lookup(game.second_player_score()));
     }
+}
+
+bool TennisGame::is_same_score(Game& game) const
+{
+    return game.first_player_score() == game.second_player_score();
 }
 
 std::string TennisGame::score_lookup(const int score) const

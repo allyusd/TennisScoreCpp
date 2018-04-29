@@ -11,6 +11,8 @@ public:
     TennisGame(IRepository* repo);
     std::string score_result(const int game_id) const;
 
+    bool is_same_score(Game& game) const;
+
 private:
     std::string score_lookup(const int score) const;
 
