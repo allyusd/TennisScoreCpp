@@ -15,7 +15,8 @@ public:
 
 private:
     std::string score_lookup(const int score) const;
-
+    std::string score_lookup(const Game& game) const;
+    std::string same_score_lookup(const Game& game) const;
 private:
     IRepository* m_repo;
     std::map<int, std::string> m_score_lookup_map;

@@ -22,13 +22,11 @@ std::string TennisGame::score_result(const int game_id) const
             return "Deuce";
         }
 
-        return score_lookup(game.first_player_score()).append(" All");
+        return same_score_lookup(game);
     }
     else
     {
-        return score_lookup(game.first_player_score())
-            .append(" ")
-            .append(score_lookup(game.second_player_score()));
+        return score_lookup(game);
     }
 }
 
@@ -41,3 +39,16 @@ std::string TennisGame::score_lookup(const int score) const
 {
     return static_cast<std::string>(m_score_lookup_map.at(score));
 }
+
+std::string TennisGame::score_lookup(const Game& game) const
+{
+    return score_lookup(game.first_player_score())
+        .append(" ")
+        .append(score_lookup(game.second_player_score()));
+}
+
+std::string TennisGame::same_score_lookup(const Game& game) const
+{
+    return score_lookup(game.first_player_score()).append(" All");
+}
+
