@@ -18,6 +18,9 @@ public:
     std::string second_player_name() const;
     void set_second_player_name(const std::string name);
 
+    std::string result() const;
+
+private:
     bool is_same_score() const;
     bool is_deuce() const;
     std::string score_lookup() const;
@@ -26,9 +29,6 @@ public:
     std::string adv_player_name() const;
     bool is_adv() const;
     std::string adv_state() const;
-    std::string result() const;
-
-private:
     std::string score_lookup(const int score) const;
 
 private:
