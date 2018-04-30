@@ -38,6 +38,26 @@ void Game::set_second_player_score(int score)
     m_second_player_score = score;
 }
 
+std::string Game::first_player_name() const
+{
+    return m_first_player_name;
+}
+
+void Game::set_first_player_name(const std::string name)
+{
+    m_first_player_name = name;
+}
+
+std::string Game::second_player_name() const
+{
+    return m_second_player_name;
+}
+
+void Game::set_second_player_name(const std::string name)
+{
+    m_second_player_name = name;
+}
+
 bool Game::is_same_score() const
 {
     return first_player_score() == second_player_score();
@@ -59,7 +79,6 @@ std::string Game::same_score_lookup() const
 {
     return score_lookup(first_player_score()).append(" All");
 }
-
 
 std::string Game::score_lookup(const int score) const
 {
