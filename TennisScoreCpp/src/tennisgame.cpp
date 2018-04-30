@@ -18,17 +18,7 @@ std::string TennisGame::score_result(const int game_id) const
     {
         if (game.is_ready_for_win())
         {
-            std::string adv_state;
-            if (std::abs(game.first_player_score() - game.second_player_score()) == 1)
-            {
-                adv_state = "Adv";
-            }
-            else
-            {
-                adv_state = "Win";
-            }
-
-            return game.adv_player_name(game).append(" ").append(adv_state);
+            return game.adv_state();
         }
 
         return game.score_lookup();

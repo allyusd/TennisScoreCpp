@@ -23,7 +23,9 @@ public:
     std::string score_lookup() const;
     std::string same_score_lookup() const;
     bool is_ready_for_win() const;
-    std::string adv_player_name(const Game& game) const;
+    std::string adv_player_name() const;
+    bool is_adv() const;
+    std::string adv_state() const;
 
 private:
     std::string score_lookup(const int score) const;

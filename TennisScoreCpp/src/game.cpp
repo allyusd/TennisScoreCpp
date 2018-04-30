@@ -85,12 +85,21 @@ bool Game::is_ready_for_win() const
     return first_player_score() > 3 || second_player_score() > 3;
 }
 
-std::string Game::adv_player_name(const Game& game) const
+std::string Game::adv_player_name() const
 {
-    return game.first_player_score() > game.second_player_score() ?
-        game.first_player_name() : game.second_player_name();
+    return first_player_score() > second_player_score() ?
+        first_player_name() : second_player_name();
 }
 
+bool Game::is_adv() const
+{
+    return std::abs(first_player_score() - second_player_score()) == 1;
+}
+
+std::string Game::adv_state() const
+{
+    return adv_player_name().append(" ").append(is_adv() ? "Adv" : "Win");
+}
 std::string Game::score_lookup(const int score) const
 {
     return static_cast<std::string>(m_score_lookup_map.at(score));
