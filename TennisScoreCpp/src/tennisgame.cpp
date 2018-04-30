@@ -16,6 +16,11 @@ std::string TennisGame::score_result(const int game_id) const
     }
     else
     {
+        if (game.first_player_score() > 3)
+        {
+            return game.first_player_name().append(" Adv");
+        }
+
         return game.score_lookup();
     }
 }
