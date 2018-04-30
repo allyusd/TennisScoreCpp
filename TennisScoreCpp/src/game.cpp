@@ -43,6 +43,11 @@ bool Game::is_same_score() const
     return first_player_score() == second_player_score();
 }
 
+bool Game::is_deuce() const
+{
+    return first_player_score() >= 3;
+}
+
 std::string Game::score_lookup() const
 {
     return score_lookup(first_player_score())

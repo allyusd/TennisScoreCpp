@@ -15,6 +15,7 @@ public:
     void set_second_player_score(int score);
 
     bool is_same_score() const;
+    bool is_deuce() const;
     std::string score_lookup() const;
     std::string same_score_lookup() const;
 

@@ -12,12 +12,7 @@ std::string TennisGame::score_result(const int game_id) const
 
     if (game.is_same_score())
     {
-        if (game.first_player_score() >= 3)
-        {
-            return "Deuce";
-        }
-
-        return game.same_score_lookup();
+        return game.is_deuce() ? "Deuce" : game.same_score_lookup();
     }
     else
     {
