@@ -100,6 +100,13 @@ std::string Game::adv_state() const
 {
     return adv_player_name().append(" ").append(is_adv() ? "Adv" : "Win");
 }
+
+std::string Game::result() const
+{
+    return is_same_score() ?
+        is_deuce() ? "Deuce" : same_score_lookup() :
+        is_ready_for_win() ? adv_state() : score_lookup();
+}
 std::string Game::score_lookup(const int score) const
 {
     return static_cast<std::string>(m_score_lookup_map.at(score));
