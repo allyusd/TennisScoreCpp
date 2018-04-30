@@ -80,6 +80,17 @@ std::string Game::same_score_lookup() const
     return score_lookup(first_player_score()).append(" All");
 }
 
+bool Game::is_ready_for_win() const
+{
+    return first_player_score() > 3 || second_player_score() > 3;
+}
+
+std::string Game::adv_player_name(const Game& game) const
+{
+    return game.first_player_score() > game.second_player_score() ?
+        game.first_player_name() : game.second_player_name();
+}
+
 std::string Game::score_lookup(const int score) const
 {
     return static_cast<std::string>(m_score_lookup_map.at(score));
