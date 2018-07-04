@@ -10,6 +10,8 @@
     <ClCompile Include="test\test.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="hardwarerepository.cpp" />
+    <ClCompile Include="maincpp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\irepository.h">
@@ -24,6 +26,10 @@
     <ClInclude Include="test\mockrepository.hpp">
       <Filter>test</Filter>
     </ClInclude>
+    <ClInclude Include="hardware_api.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="hardwarerepository.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">

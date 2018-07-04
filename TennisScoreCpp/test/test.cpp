@@ -79,8 +79,8 @@ TEST_F(TennisGameTest, FifteenLove)
     game.set_id(kAnyGameID);
     game.set_first_player_score(1);
     game.set_second_player_score(0);
-
     given_game(game);
+
     score_should_be("Fifteen Love");
 }
 

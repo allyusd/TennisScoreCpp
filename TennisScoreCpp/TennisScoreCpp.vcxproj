@@ -33,12 +33,16 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
+    <ClInclude Include="hardwarerepository.h" />
+    <ClInclude Include="hardware_api.h" />
     <ClInclude Include="src\game.h" />
     <ClInclude Include="src\irepository.h" />
     <ClInclude Include="src\tennisgame.h" />
     <ClInclude Include="test\mockrepository.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="hardwarerepository.cpp" />
+    <ClCompile Include="maincpp.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\tennisgame.cpp" />
     <ClCompile Include="test\test.cpp" />
